@@ -25,7 +25,7 @@ public partial class AWContext : DbContext
     {
         modelBuilder.Entity<Products>(entity =>
         {
-            entity.ToTable("Products");
+            entity.ToTable("Product","SalesLT");
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.ProductNumber).HasMaxLength(50);
@@ -40,7 +40,7 @@ public partial class AWContext : DbContext
         });
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.ToTable("Customer");
+            entity.ToTable("Customer", "SalesLT");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
 
